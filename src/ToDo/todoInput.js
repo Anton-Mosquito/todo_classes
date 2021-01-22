@@ -1,5 +1,6 @@
 import React from "react";
 import sprite from "../sprite.svg";
+import PropTypes from "prop-types";
 
 class InputField extends React.Component {
   constructor(props) {
@@ -50,5 +51,10 @@ class InputField extends React.Component {
     );
   }
 }
+
+InputField.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+  create: PropTypes.func.isRequired,
+};
 
 export default InputField;

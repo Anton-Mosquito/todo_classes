@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class TaskList extends React.Component {
   constructor(props) {
@@ -53,8 +54,17 @@ class TaskList extends React.Component {
   }
 
   render() {
-    return <div className="todo__container" data-list="container"></div>;
+    return (
+      <React.Fragment>
+        <div className="todo__container" data-list="container"></div>;
+      </React.Fragment>
+    );
   }
 }
+
+TaskList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+  append: PropTypes.arrayOf(PropTypes.node),
+};
 
 export default TaskList;
